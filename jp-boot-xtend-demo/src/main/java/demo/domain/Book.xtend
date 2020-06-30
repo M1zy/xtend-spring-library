@@ -11,6 +11,7 @@ import javax.persistence.ManyToMany
 import java.util.Set
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
+import javax.persistence.FetchType
 
 @Accessors
 @Entity
@@ -33,6 +34,6 @@ class Book {
 	@Column
 	Integer year;
 			
- 	@ManyToMany
+ 	@ManyToMany(fetch=FetchType.EAGER,cascade=MERGE)
     Set<Library> libraries;
 }

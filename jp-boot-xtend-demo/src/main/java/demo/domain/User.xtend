@@ -7,10 +7,11 @@ import org.eclipse.xtend.lib.annotations.EqualsHashCode
 import org.eclipse.xtend.lib.annotations.ToString
 import ru.jpoint.xtend.demo.Entity
 import org.eclipse.xtend.lib.annotations.Accessors
-import java.util.Set
 import javax.persistence.ManyToMany
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
+import javax.persistence.FetchType
+import java.util.Set
 
 @Accessors
 @Entity
@@ -30,6 +31,6 @@ class User {
 	@Column(unique = true)	
 	String email
 			
-	@ManyToMany
+ 	@ManyToMany(fetch=FetchType.EAGER,cascade=MERGE)
 	Set<Library> libraries;
 }
