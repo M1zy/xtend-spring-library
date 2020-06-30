@@ -7,6 +7,8 @@ import org.eclipse.xtend.lib.annotations.EqualsHashCode
 import org.eclipse.xtend.lib.annotations.ToString
 import ru.jpoint.xtend.demo.Entity
 import org.eclipse.xtend.lib.annotations.Accessors
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
 
 @Accessors
 @Entity
@@ -15,6 +17,7 @@ import org.eclipse.xtend.lib.annotations.Accessors
 class Library {
 	
 	@Id 
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	Long id
 	
 	def void setId(Long id) {

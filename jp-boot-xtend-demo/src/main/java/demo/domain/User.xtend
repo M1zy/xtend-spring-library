@@ -9,6 +9,8 @@ import ru.jpoint.xtend.demo.Entity
 import org.eclipse.xtend.lib.annotations.Accessors
 import java.util.Set
 import javax.persistence.ManyToMany
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
 
 @Accessors
 @Entity
@@ -16,6 +18,7 @@ import javax.persistence.ManyToMany
 @EqualsHashCode
 class User {
 	@Id 
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	Long id
 	
 	@Transient
